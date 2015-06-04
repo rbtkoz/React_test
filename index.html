@@ -1,85 +1,16 @@
 <head>
-	<script src="https://fb.me/react-0.13.3.js"></script>
-	<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
+	<style>
+		.btn .caret {
+			position: relative;
+			margin-left: 10px;
+			margin-top:12px;
+		}
+	</style>
 
 </head>
 <body>
 	<div class ="container"></div>
 
 </body>
-
-<!-- browser ignores jsx, transformer file scans looks script tag with type text/jsx and will compile it to javascript and hand it to browser
-That is the purpose of JSX transformer -->
-<script type="text/jsx">
-
-
-	// var Badge = React.createClass({
-	// //createClass takes a configuration object
-	// //a render method that returns some jsx
-	// 	render: function(){
-	// 		return <button className="btn btn-primary" type="button">
- //  			{this.props.title} <span className="badge">{this.props.number}</span>
-	// 		</button>
-	// 	}
-	// });
-
-	var Thumbnail = React.createClass({
-		
-		render: function(){
-			return <div class="col-sm-6 col-md-4">
-    			<div class="thumbnail">
-      				<img src={this.props.imageUrl} alt="..."></img>
-      				<div class="caption">
-        				<h3>{this.props.header}</h3>
-        				<p>{this.props.description}</p>
-        				<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      				</div>
-    			</div>
-  			</div>
-		}
-	});
-
-	var ThumbnailList = React.createClass({
-		render: function(){
-			var list = this.props.thumbnailData.map(function(thumbnailProps){
-				console.log(thumbnailProps)
-				return <Thumbnail {...thumbnailProps}/>
-
-			})
-			console.log(list);
-			return <div className ="thumbnailList">
-				{list}
-
-				</div>
-
-
-		}
-	})
-	//options object is defined
-	var options = {
-		thumbnailData: [{
-		title: "Inbox",
-		number: 32,
-		header: "Learn React",
-		description: "React is a fantastic new front end library for rendering web pages.React is a fantastic new front end library for rendering web pages.React is a fantastic new front end library for rendering web pages",
-		imageUrl: "http://insin.github.io/talks/belfast-js-2014-12/react-logo.png"
-	},
-	{
-		title: "Inbox",
-		number: 12,
-		header: "Learn Gulp",
-		description: "Gulp will speed up your development workflow.Gulp will speed up your development workflow.Gulp will speed up your development workflow",
-		imageUrl: "http://brunch.io/images/others/gulp.png"
-	}]
-};
-
-
-	//Ask React to create an instance of class and reanderrender this class
-	var element = React.createElement(ThumbnailList,options);
-
-    //render on page
-	React.render(element, document.querySelector('.container'));
-
-</script>
+<script src= "main.js"></script>
